@@ -11,7 +11,7 @@ namespace MyWebsite.Models
     {
         public string Login { get; set; }
         public string Avatar_url { get; set; }
-        public string Html_url {get; set;}
+        public string Html_url { get; set; }
         [JsonPropertyName("public_repos")]
         public int Repos_number { get; set; }
 
