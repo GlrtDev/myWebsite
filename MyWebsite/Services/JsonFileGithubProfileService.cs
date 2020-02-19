@@ -22,7 +22,7 @@ namespace MyWebsite.Services
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "GithubProfiles.json"); }
         }
 
-        public IEnumerable<GithubProfile> GetProducts()
+        public IEnumerable<GithubProfile> GetGithubProfiles()
         {
             using (var jsonFileReader = File.OpenText(JsonFileName))
             {
