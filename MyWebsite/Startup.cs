@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyWebsite.Services;
 
 namespace MyWebsite
 {
@@ -24,6 +25,7 @@ namespace MyWebsite
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddTransient<JsonFileGithubProfileService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
