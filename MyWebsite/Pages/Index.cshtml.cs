@@ -13,14 +13,14 @@ namespace MyWebsite.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        public JsonFileGithubProfileService GithubProfileService;
+        public JsonFileGithubProfileService GithubProfileService { get; }
         public IEnumerable<GithubProfile> GithubProfiles { get; private set; }
         
         public IndexModel(ILogger<IndexModel> logger,
-            JsonFileGithubProfileService profileService)
+            JsonFileGithubProfileService githubProfileService)
         {
             _logger = logger;
-            GithubProfileService = profileService;
+            GithubProfileService = githubProfileService;
         }
 
         public void OnGet()
