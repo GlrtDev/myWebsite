@@ -15,17 +15,23 @@ namespace MyWebsite.Pages
         private readonly ILogger<IndexModel> _logger;
         public JsonFileGithubProfileService GithubProfileService { get; }
         public IEnumerable<GithubProfile> GithubProfiles { get; private set; }
-        
+
+        public JsonFileGithubRepoService GithubRepoService { get; }
+        public IEnumerable<GithubRepo> GithubRepos { get; private set; }
+
         public IndexModel(ILogger<IndexModel> logger,
-            JsonFileGithubProfileService githubProfileService)
+            JsonFileGithubProfileService githubProfileService,
+            JsonFileGithubRepoService githubRepoService)
         {
             _logger = logger;
             GithubProfileService = githubProfileService;
+            GithubRepoService = githubRepoService;
         }
 
         public void OnGet()
         {
             GithubProfiles = GithubProfileService.GetGithubProfiles();
+            GithubRepos = GithubRepoService.GetGithubRepos();
         }
     }
 }

@@ -16,15 +16,28 @@
             <h3 class="font-weight-light">My GitHub Profile</h3>
             @foreach (var githubprofile in Model.GithubProfiles)
             {
-                <img src="@githubprofile.Avatar_url" class=" mx-auto rounded" style="width:25%" alt="GitImg">
-                <h4 class="font-weight-light">@githubprofile.Login</h4>
-                <h4 class="font-weight-light">Repos count: @githubprofile.Repos_number</h4>
-                <a href="@githubprofile.Html_url" class="font-weight-light">Link to profile</a>
-            }
-        </div>
-        <div class="col-sm-8 m-3 bg-light rounded">
-            <h3 class="font-weight-light">My Projects</h3>
-            Unity C# game
-        </div>
-    </div>
+                <div class="card m-2 p-3 bg-light">
+                    <img src="@githubprofile.Avatar_url" class=" mx-auto rounded" style="width:25%" alt="GitImg">
+                    <h4 class="font-weight-light">Nick: @githubprofile.Login</h4>
+                    <h4 class="font-weight-light">Repos count: @githubprofile.Repos_number</h4>
+                    <a href="@githubprofile.Html_url" class="font-weight-light">Link to profile</a>
+                </div>
+             }
+         </div>
+
+                <div class="col-sm-8 m-3 bg-light rounded">
+                    <h3 class="font-weight-light text-center">My Projects</h3>
+                    @foreach (var githubRepo in Model.GithubRepos)
+                    {
+                        <div class="card m-2 p-3 bg-light">
+                            <h4 class="font-weight-light">@githubRepo.Name</h4>
+                            <p class="font-weight-light">Language: @githubRepo.Language</p>
+                            <p class="font-weight-light">Description: @githubRepo.Description</p>
+                            <p class="font-weight-light">Last Update : @githubRepo.UpdateDate.ToShortDateString()</p>
+                            <a href="@githubRepo.Html_url" class="font-weight-light">Link to Repo</a>
+                        </div>
+                    }
+                </div>
+            </div>
 </div>
+
