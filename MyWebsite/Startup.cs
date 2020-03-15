@@ -25,7 +25,9 @@ namespace MyWebsite
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddControllers();
             services.AddTransient<JsonFileGithubProfileService>();
+            services.AddTransient<JsonFileGithubRepoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +54,7 @@ namespace MyWebsite
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }
