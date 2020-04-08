@@ -13,16 +13,16 @@
 <div class="container" style="margin-top:30px">
     <div class="row">
         <div class="col-sm-3 m-3 bg-light rounded">
-            <h3 class="font-weight-light">My GitHub Profile</h3>
-            @foreach (var githubprofile in Model.GithubProfiles)
-            {
+            <h3 class="font-weight-light text-center">My GitHub Profile</h3>
+            @*@foreach (var githubprofile in Model.GithubProfiles)
+            {*@
                 <div class="card m-2 p-3 bg-light">
-                    <img src="@githubprofile.Avatar_url" class=" mx-auto rounded" style="width:25%" alt="GitImg">
-                    <h4 class="font-weight-light">Nick: @githubprofile.Login</h4>
-                    <h4 class="font-weight-light">Repos count: @githubprofile.Repos_number</h4>
-                    <a href="@githubprofile.Html_url" class="font-weight-light">Link to profile</a>
+                    <img src="@Model.GithubProfile.Avatar_url" class=" mx-auto rounded" style="width:25%" alt="GitImg">
+                    <h4 class="font-weight-light">Nick: @Model.GithubProfile.Login</h4>
+                    <h4 class="font-weight-light">Repos count: @Model.GithubProfile.Repos_number</h4>
+                    <a href="@Model.GithubProfile.Html_url" class="font-weight-light">Link to profile</a>
                 </div>
-             }
+             @*}*@
          </div>
 
                 <div class="col-sm-8 m-3 bg-light rounded">

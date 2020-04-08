@@ -14,7 +14,7 @@ namespace MyWebsite.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         public JsonFileGithubProfileService GithubProfileService { get; }
-        public IEnumerable<GithubProfile> GithubProfiles { get; private set; }
+        public GithubProfile GithubProfile { get; private set; }
 
         public JsonFileGithubRepoService GithubRepoService { get; }
         public IEnumerable<GithubRepo> GithubRepos { get; private set; }
@@ -30,7 +30,7 @@ namespace MyWebsite.Pages
 
         public void OnGet()
         {
-            GithubProfiles = GithubProfileService.GetGithubProfiles();
+            GithubProfile = GithubProfileService.GetGithubProfile();
             GithubRepos = GithubRepoService.GetGithubRepos();
         }
     }

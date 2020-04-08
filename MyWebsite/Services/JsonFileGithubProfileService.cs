@@ -22,11 +22,11 @@ namespace MyWebsite.Services
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "GithubProfiles.json"); }
         }
 
-        public IEnumerable<GithubProfile> GetGithubProfiles()
+        public GithubProfile GetGithubProfile()
         {
             using (var jsonFileReader = File.OpenText(JsonFileName))
             {
-                return JsonSerializer.Deserialize<GithubProfile[]>(jsonFileReader.ReadToEnd(),
+                return JsonSerializer.Deserialize<GithubProfile>(jsonFileReader.ReadToEnd(),
                     new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true
